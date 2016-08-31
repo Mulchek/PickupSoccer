@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PickupSoccer.Models;
 
 namespace PickupSoccer.Controllers
 {
@@ -10,7 +11,12 @@ namespace PickupSoccer.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Welcome to St. Louis Pick Up Soccer";
+            
+            // Instantiate a DateTime Object yyyy, mm, dd, hh, mm, ss
+            DateTime gameTime = new DateTime(2016, 08, 30, 23, 59, 59);
+            
+            Game game = new Game(gameTime, "Heman Park");
 
             return View();
         }
